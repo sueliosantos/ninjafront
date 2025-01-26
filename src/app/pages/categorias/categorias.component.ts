@@ -16,8 +16,18 @@ export class CategoriasComponent {
 
   async ngOnInit() {
     const categorys = await this.categorySrv.GetAll();
-    this.dataSource = categorys.data.map((it: ICategory) => {
-      return { id: it.id, name: it.name, description: it.description };
-    });
+    this.dataSource = new MatTableDataSource(categorys.data);
+
+    // Ativar filtro para ignorar maiúsculas e minúsculas
+    this.dataSource.filterPredicate = (data: ICategory, filter: string) => {
+      const dataStr = data.name.toLowerCase();
+      return dataStr.includes(filter);
+    };
+  }
+
+  filter(event: KeyboardEvent) {
+    const input = event.target as HTMLInputElement;
+    const value = input.value.trim().toLowerCase();
+    this.dataSource.filter = value;
   }
 }

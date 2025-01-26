@@ -1,3 +1,10 @@
+<div class="container-toobar">
+  <mat-form-field appearance="outline">
+    <mat-label>Pesquisa</mat-label>
+    <input matInput placeholder="Descreva o dado que deseja pesquisar" (keyup)="filter($event)">
+  </mat-form-field>
+  <button mat-raised-button color="primary" routerLink="/category">Nova Categoria</button>
+</div>
 <div class="div-table mat-elevation-z8">
   <table mat-table [dataSource]="dataSource">
 

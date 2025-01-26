@@ -1,1 +1,17 @@
-<p>categoria works!</p>
+<div class="container">
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Categoria</mat-label>
+    <input matInput placeholder="Informe o nome da categoria" required="true" [(ngModel)]="category.name">
+  </mat-form-field>
+
+  <mat-form-field appearance="outline" class="full-width">
+    <mat-label>Descrição</mat-label>
+    <textarea matInput placeholder="Informe a descrição da categoria" rows="4" [(ngModel)]="category.description"></textarea>
+  </mat-form-field>
+  <div class="toobar___form">
+    <button mat-raised-button routerLink="/Categoria">Cancelar</button>
+    <button mat-raised-button color="primary" (click)="save()">Salvar</button>
+  </div>
+
+
+</div>
