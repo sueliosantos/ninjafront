@@ -5,6 +5,7 @@ import { CategoriaComponent } from './pages/categoria/categoria.component';
 import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { AdminGuard } from './shared/admin.guard';
+import { SubcategoriaslistarComponent } from './pages/subcategoriaslistar/subcategoriaslistar.component';
 import { SubCategoryComponent } from './pages/sub-category/sub-category.component';
 
 const routes: Routes = [
@@ -28,12 +29,12 @@ const routes: Routes = [
   },
 
   {
-    path: 'subcategorys',
-    component: SubCategoryComponent,
+    path: 'subcategoriaslistar',
+    component: SubcategoriaslistarComponent,
     canActivate: [AdminGuard],
   },
   {
-    path: 'subcategorys/:id',
+    path: 'subcategory/:id',
     component: SubCategoryComponent,
     canActivate: [AdminGuard],
   },

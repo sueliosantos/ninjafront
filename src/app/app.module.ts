@@ -27,6 +27,8 @@ import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatPaginatorIntl } from '@angular/material/paginator';
 import { getPaginatorIntl } from './shared/paginator-intl';
 import { SubCategoryComponent } from './pages/sub-category/sub-category.component';
+import { SubcategoriaslistarComponent } from './pages/subcategoriaslistar/subcategoriaslistar.component';
+import { MatSelectModule } from '@angular/material/select';
 
 @NgModule({
   declarations: [
@@ -38,6 +40,7 @@ import { SubCategoryComponent } from './pages/sub-category/sub-category.componen
     HomeComponent,
     LoginComponent,
     SubCategoryComponent,
+    SubcategoriaslistarComponent,
   ],
   imports: [
     FormsModule,
@@ -57,6 +60,7 @@ import { SubCategoryComponent } from './pages/sub-category/sub-category.componen
     MatInputModule,
     MatSnackBarModule,
     MatPaginatorModule,
+    MatSelectModule,
   ],
   providers: [
     {

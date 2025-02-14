@@ -4,6 +4,7 @@
 
 .div-table {
   width: 100%;
+  float: left;
 }
 
 .div-table > * {
@@ -13,65 +14,107 @@
 .full-width {
   width: 100%;
 }
-.toobar___form{
+
+[col-10] {
+  width: 10%;
+  float: left;
+}
+
+[col-25] {
+  width: 25%;
+  float: left;
+}
+
+[col-33] {
+  width: 33%;
+  float: left;
+}
+
+[col-50] {
+  width: calc(50% - 10px);
+  float: left;
+  margin-right: 10px;
+}
+.no-margin-right[col-50] {
+  width: 50% !important;
+  margin-right: 0px !important;
+}
+
+[col-75] {
+  width: 75%;
+  float: left;
+}
+
+[col-100] {
+  width: 100%;
+  float: left;
+}
+
+.no-margin-right {
+  margin-right: 0px !important;
+}
+
+.toolbar___form {
   width: calc(100% - 20px);
   text-align: right;
-  border: 1px solid #f2f2f2;
+  border: 1px solid #f2f2;
   padding: 10px;
   box-shadow: 5px 4px 10px rgba(220, 213, 213, 0.7);
   border-radius: 5px;
-  bottom {
+
+  button {
     margin-left: 10px;
   }
 }
 
-.container-toobar {
+.container-toolbar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  mat-form-field {
+    flex: 1 auto;
+    margin-right: 10px;
+    margin-bottom: -15px;
+  }
+  button {
+    margin-bottom: 10px;
+    margin-top: 3px;
+  }
 }
+@media (max-width: 560px) {
+  mat-sidenav-content {
+    padding: 10px !important;
+  }
+  .toolbar___form {
+    display: flex;
+    flex-direction: column;
 
-mat-form-field {
-  flex: 1 auto;
-  margin-right: 10px;
-  margin-bottom: -15px;
-}
-
-button{
-  margin-bottom: 10px;
-  margin-top: 3px;
-
+    button {
+      margin-left: 0px !important;
+    }
+    button:last-child {
+      margin-top: 10px;
+    }
+  }
 }
 
 td.actions {
+  width: 60px;
 
-
-  button{
+  button {
     min-width: 20px;
     padding: 0px !important;
     float: left;
   }
-
-  button:first-child{
+  button:first-child {
     margin-right: 10px;
-    color: blue;
   }
-  button:last-child{
+  button:last-child {
     color: red;
   }
-
 }
 
-@media(max-width: 560px){
-  mat-sidenav-content {
-    padding:  10px !important;
-  }
-
-  .toobar___form{
-    display: flex;
-    flex-direction: column;
-    bottom{
-      margin-left: 0px o !important;
-    }
-  }
+.confirm-button-dialog {
+  background: #673ab7 !important;
 }
