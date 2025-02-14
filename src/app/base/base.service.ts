@@ -13,7 +13,7 @@ export abstract class BaseService<T> {
     return this.http.get(this.urlBase);
   }
 
-  public GetById(id: string): Promise<IResultHttp> {
+  public GetById(id: number): Promise<IResultHttp> {
     return this.http.get(`${this.urlBase}/${id}`);
   }
 
@@ -21,7 +21,7 @@ export abstract class BaseService<T> {
     return this.http.post(this.urlBase, model);
   }
 
-  public delete(id: string): Promise<IResultHttp> {
+  public delete(id: number): Promise<IResultHttp> {
     return this.http.delete(`${this.urlBase}/${id}`);
   }
 }

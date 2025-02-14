@@ -23,6 +23,10 @@ import { HomeComponent } from './pages/home/home.component';
 import { LoginComponent } from './pages/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatPaginatorIntl } from '@angular/material/paginator';
+import { getPaginatorIntl } from './shared/paginator-intl';
+import { SubCategoryComponent } from './pages/sub-category/sub-category.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +37,7 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     CategoriaComponent,
     HomeComponent,
     LoginComponent,
+    SubCategoryComponent,
   ],
   imports: [
     FormsModule,
@@ -51,8 +56,14 @@ import { MatSnackBarModule } from '@angular/material/snack-bar';
     NgxSpinnerModule,
     MatInputModule,
     MatSnackBarModule,
+    MatPaginatorModule,
   ],
-  providers: [],
+  providers: [
+    {
+      provide: MatPaginatorIntl,
+      useValue: getPaginatorIntl(),
+    },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

@@ -43,6 +43,25 @@ button{
 
 }
 
+td.actions {
+
+
+  button{
+    min-width: 20px;
+    padding: 0px !important;
+    float: left;
+  }
+
+  button:first-child{
+    margin-right: 10px;
+    color: blue;
+  }
+  button:last-child{
+    color: red;
+  }
+
+}
+
 @media(max-width: 560px){
   mat-sidenav-content {
     padding:  10px !important;

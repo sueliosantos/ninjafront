@@ -1,5 +1,5 @@
 export interface IInterface {
-  id: string;
+  id: number;
   createAt: Date;
   upadateAt: Date;
 }

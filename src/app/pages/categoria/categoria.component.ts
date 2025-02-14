@@ -1,7 +1,7 @@
+import { CategoryModel } from './../../models/CategoryModel';
 import { Component } from '@angular/core';
 import { MatSnackBar } from '@angular/material/snack-bar';
-import { Route, Router } from '@angular/router';
-import { CategoryModel } from 'src/app/models/CategoryModel';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { CategoryService } from 'src/app/services/category.service';
 
 @Component({
@@ -14,10 +14,27 @@ export class CategoriaComponent {
   constructor(
     private categoryService: CategoryService,
     private matSnack: MatSnackBar,
-    private router: Router
+    private router: Router,
+    private active: ActivatedRoute
   ) {}
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.active.params.subscribe((p) => this.getId(p['id']));
+  }
+
+  async getId(id: string): Promise<void> {
+    this.category = new CategoryModel(); // Inicialize um novo objeto de categoria
+    if (id === 'new') {
+      return;
+    }
+
+    try {
+      const result = await this.categoryService.GetById(Number(id));
+      this.category = result.data as CategoryModel;
+    } catch (error) {
+      console.error('Erro ao buscar categoria', error);
+    }
+  }
 
   async save(): Promise<void> {
     const result = await this.categoryService.post(this.category);
