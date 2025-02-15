@@ -29,6 +29,9 @@ import { getPaginatorIntl } from './shared/paginator-intl';
 import { SubCategoryComponent } from './pages/sub-category/sub-category.component';
 import { SubcategoriaslistarComponent } from './pages/subcategoriaslistar/subcategoriaslistar.component';
 import { MatSelectModule } from '@angular/material/select';
+import { QuestoeslistarComponent } from './pages/questoeslistar/questoeslistar.component';
+import { QuestaoComponent } from './pages/questao/questao.component';
+import { QuestionTypePipe } from './pipes/question-type.pipe';
 
 @NgModule({
   declarations: [
@@ -41,6 +44,9 @@ import { MatSelectModule } from '@angular/material/select';
     LoginComponent,
     SubCategoryComponent,
     SubcategoriaslistarComponent,
+    QuestoeslistarComponent,
+    QuestaoComponent,
+    QuestionTypePipe,
   ],
   imports: [
     FormsModule,

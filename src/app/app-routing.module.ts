@@ -7,6 +7,8 @@ import { LoginComponent } from './pages/login/login.component';
 import { AdminGuard } from './shared/admin.guard';
 import { SubcategoriaslistarComponent } from './pages/subcategoriaslistar/subcategoriaslistar.component';
 import { SubCategoryComponent } from './pages/sub-category/sub-category.component';
+import { QuestoeslistarComponent } from './pages/questoeslistar/questoeslistar.component';
+import { QuestaoComponent } from './pages/questao/questao.component';
 
 const routes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: '/home' },
@@ -36,6 +38,17 @@ const routes: Routes = [
   {
     path: 'subcategory/:id',
     component: SubCategoryComponent,
+    canActivate: [AdminGuard],
+  },
+
+  {
+    path: 'questoeslistar',
+    component: QuestoeslistarComponent,
+    canActivate: [AdminGuard],
+  },
+  {
+    path: 'questao/:id',
+    component: QuestaoComponent,
     canActivate: [AdminGuard],
   },
 ];
